@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a href="/" class="navbar-brand">MT Blog</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <form class="form-inline">
+    <input class="form-control mr-sm-2" type="text" name="keyword" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="/" class="nav-item nav-link active">Ana Sayfa</a>
+            <a href="/about" class="nav-item nav-link">Hakkımda</a>
+            <a href="#" a="nav-item nav-link">Mesajlar</a>
+            <a href="#" class="nav-item nav-link disabled" tabindex="-1">Raporla</a>
+        </div>
+
+        {% if session["logged_in"] %}
+            <div class="navbar-nav ml-auto">
+                <a href="/logout" class="nav-item nav-link">Çıkış Yap</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a href="/dashboard" class="nav-item nav-link">Kontrol Paneli</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a href="/articles" class="nav-item nav-link">Makaleler</a>
+            </div>
+        {% else %}
+            <div class="navbar-nav ml-auto">
+                <a href="/login" class="nav-item nav-link">Giriş</a>
+            </div>
+        {% endif %}
+        
+        
+        <div class="navbar-nav ml-auto">
+            <a href="/register" class="nav-item nav-link">Kayıt</a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar navbar-dark bg-dark">
+</nav>
